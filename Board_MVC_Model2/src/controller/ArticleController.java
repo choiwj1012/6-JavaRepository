@@ -2,13 +2,13 @@ package controller;
 
 import java.util.ArrayList;
 
-import View.AlertView;
-import View.ArticleListView;
-import View.ArticleReadView;
-import View.ArticleUpdateView;
-import View.ArticleWriteView;
 import dao.ArticleDAO;
 import domain.Article;
+import view.AlertView;
+import view.ArticleListView;
+import view.ArticleReadView;
+import view.ArticleUpdateView;
+import view.ArticleWriteView;
 
 public class ArticleController {
 
@@ -80,10 +80,9 @@ public class ArticleController {
 	
 	public void requestUpdateArticle(int number){
 		
-		 // 수정전 article 정보 view
+		// 수정전 article 정보 view
 		Article article = dao.selectOne(number);
 		ArticleReadView readView = new ArticleReadView(this);
-	    // readView.printArticle(article);
 		
 		System.out.println("여기까지");
 		
