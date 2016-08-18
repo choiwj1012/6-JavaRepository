@@ -65,6 +65,7 @@ public class ShowMainMenu {
 			}
 			
 		}
-	}
+		
+	}  // End of showMainMenu()
 	
 }

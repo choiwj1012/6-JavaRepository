@@ -2,26 +2,25 @@ package view;
 
 import java.util.Scanner;
 
-import controller.ArticleController;
 import domain.Article;
 
 public class ArticleUpdateView {
 
 	// variable
 	private Scanner keyboard;
-	private ArticleController controller;
 	
 	// constructor
-	public ArticleUpdateView(ArticleController controller){
+	public ArticleUpdateView(){
 		
 		this.keyboard = new Scanner(System.in);
-		this.controller = controller;
+		
 	}
 	
 	// method
 	public void articleUpdateView(Article article){
 		
 		while(true){
+			
 			System.out.println("수정하고싶은 메뉴를 선택하세요");
 			System.out.println("1. 글제목 || 2. 글내용 || 3. 작성자 || 4. 그만수정하기");
 			int selectedMenu = keyboard.nextInt();
@@ -55,7 +54,8 @@ public class ArticleUpdateView {
 				
 			}
 		
-		}
-	}
+		} // End of while
+		
+	} // End of articleUpdateView()
 	
 }

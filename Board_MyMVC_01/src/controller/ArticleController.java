@@ -32,21 +32,23 @@ public class ArticleController {
 		
 	} // End of requestShowMainMenu()
 	
+	
 	public void requestListArticle(){
 		
 		ArrayList<Article> articles = null;
-		articles = articleDAO.selectAll();
-		ArticleListView listView = new ArticleListView(this);
-		listView.articleListView(articles);
+		articles = articleDAO.selectAll(); // 모든 배열 받기
+		ArticleListView listView = new ArticleListView();
+		listView.articleListView(articles); // 모든 배열 출력하기
 			
 	} // End of requestListArticle()
+	
 	
 	public void requestWriteArticle(){
 		
 		boolean success = false;
-		ArticleWriteView writeView = new ArticleWriteView(this);
-		article = writeView.articleWriteView();
-		success = articleDAO.insert(article);
+		ArticleWriteView writeView = new ArticleWriteView();
+		article = writeView.articleWriteView(); // 글 작성
+		success = articleDAO.insert(article); // 작성한 글 배열에 삽입
 		
 		AlertView alertView = new AlertView();
 		
@@ -64,32 +66,37 @@ public class ArticleController {
 		
 	} // End of requestWriteArticle()
 	
+	
 	public void requestReadArticle(){
 		
 		SelectNumView selectArticleNum = new SelectNumView();
-		int selectedNum = selectArticleNum.selectArticleNum(); // 선택한 숫자 받음
-		article = articleDAO.selectOne(selectedNum); // 해당하는 배열 찾음
-		ArticleListView listView = new ArticleListView(this);
-		listView.printSelectView(article); // 그 배열을 출력함
+		int selectedNum = selectArticleNum.selectArticleNum(); // 선택한 숫자 받기
+		article = articleDAO.selectOne(selectedNum); // 선택한 숫자에 해당하는 배열 받기
+		
+		ArticleListView listView = new ArticleListView(); 
+		listView.printSelectView(article); //선택된 배열 출력하기
 		
 	} // End of requestReadArticle()
 	
+	
 	public void requestUpdateArticle(){
 		
-		ArticleUpdateView update = new ArticleUpdateView(this);
 		SelectNumView selectArticleNum = new SelectNumView();
-		int selectedNum = selectArticleNum.selectArticleNum();
-		article = articleDAO.selectOne(selectedNum);
-		update.articleUpdateView(article);
+		int selectedNum = selectArticleNum.selectArticleNum(); // 선택한 숫자 받기
+		article = articleDAO.selectOne(selectedNum); // 선택한 숫자에 해당하는 배열 받기
+		
+		ArticleUpdateView update = new ArticleUpdateView();
+		update.articleUpdateView(article); //선택된 배열 출력하기
 		
 	} // End of requestUpdateArticle()
+	
 	
 	public void requestDeleteArticle(){
 		
 		SelectNumView selectArticleNum = new SelectNumView();
-		int selectedNum = selectArticleNum.selectArticleNum();
+		int selectedNum = selectArticleNum.selectArticleNum(); // 선택한 숫자 받기
 		
-		boolean success = articleDAO.delete(selectedNum);
+		boolean success = articleDAO.delete(selectedNum); // 선택된 배열 삭제
 		AlertView alertView = new AlertView();
 		
 		if(success){

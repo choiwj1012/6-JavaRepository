@@ -2,25 +2,10 @@ package view;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Scanner;
 
-import controller.ArticleController;
 import domain.Article;
 
 public class ArticleListView {
-
-	// variable
-	private Scanner keyboard;
-	private ArticleController controller;
-
-	// constructor
-	public ArticleListView(ArticleController controller){
-
-		this.keyboard = new Scanner(System.in);
-		this.controller = controller;
-
-	}
-
 
 	public void articleListView(ArrayList<Article> articles) {
 
@@ -41,8 +26,9 @@ public class ArticleListView {
 			System.out.println(articles.get(i).getReadCount());
 		}
 
-	}
+	} // End of articleListView()
 
+	
 	public void printSelectView(Article article){
 
 		if(article == null){
@@ -59,8 +45,7 @@ public class ArticleListView {
 		System.out.println("조회수 : " + article.getReadCount());
 
 		article.setReadCount(article.getReadCount() + 1);
-	}
-
-
+		
+	} // End of printSelectView()
 
 }

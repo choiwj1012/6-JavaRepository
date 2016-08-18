@@ -22,5 +22,6 @@ public class SelectNumView {
 		int selectedNum = keyboard.nextInt();
 		return selectedNum;
 
-	}
+	} // End of selectArticleNum()
+	
 }

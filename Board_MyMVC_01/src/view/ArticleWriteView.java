@@ -2,23 +2,20 @@ package view;
 
 import java.util.Scanner;
 
-import controller.ArticleController;
 import domain.Article;
 
 public class ArticleWriteView {
 
 	// variable 
 	private Scanner keyboard;
-	private ArticleController controller;
 	
 	// constructor
-	public ArticleWriteView(ArticleController controller){
+	public ArticleWriteView(){
 		
 		this.keyboard = new Scanner(System.in);
-		this.controller = controller;
 	}
 	
-	
+	// method
 	public Article articleWriteView(){
 		
 		System.out.println("글을 작성할 수 있는 메뉴입니다.");
@@ -32,6 +29,7 @@ public class ArticleWriteView {
 		Article article = new Article(title, content, writer);
 		
 		return article;
-	}
+		
+	} // End of articleWriteView()
 	
 }
