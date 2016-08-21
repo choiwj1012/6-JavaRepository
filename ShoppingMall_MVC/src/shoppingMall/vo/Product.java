@@ -6,7 +6,9 @@ public class Product {
 	private int number;		// 상품번호		
 	private String name;	// 상품이름		 
 	private int price;		// 상품가격		 
-	private String information;  // 상품정보
+	private String information;     // 상품정보
+	private int countProductInCart;	// 장바구니(카트)에 개별 상품의 담겨진 숫자
+		
 	
 	// constructor
 	public Product() {
@@ -52,6 +54,14 @@ public class Product {
 
 	public void setInformation(String information) {
 		this.information = information;
+	}
+	
+	public int getCountProductInCart() {
+		return countProductInCart;
+	}
+
+	public void setCountProductInCart(int countProductInCart) {
+		this.countProductInCart = countProductInCart;
 	}
 	
 }

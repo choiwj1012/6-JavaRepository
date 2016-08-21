@@ -108,17 +108,5 @@ public class ProductView {
 		return deleteProduct;
 		
 	} // End of deleteProductView()
-	
-	
-	public int selectView(){
 		
-		int selectedNum = 0; 
-		
-		System.out.println("원하시는 상품번호를 입력해 주세요");
-		selectedNum = keyboard.nextInt();
-		
-		return selectedNum;
-		
-	} // End of selectView()
-	
 }

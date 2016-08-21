@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import shoppingMall.dao.ProductDAO;
 import shoppingMall.view.AlertView;
 import shoppingMall.view.ProductView;
+import shoppingMall.view.SelectView;
 import shoppingMall.vo.Product;
 
 public class ProductController implements MainController {
@@ -39,17 +40,19 @@ public class ProductController implements MainController {
 
 	public void requestUpdateProduct(){
 		
-		int selectedNum = productView.selectView();
-		Product updateProduct = productView.updateProductView(selectedNum);
+		SelectView selectedProduct = new SelectView();
+		int selectedProductNum = selectedProduct.selectView();
+		Product updateProduct = productView.updateProductView(selectedProductNum);
 		productDAO.updateProduct(updateProduct);
 		
 	} // End of requestUpdateProductInfo()
 
 
 	public void requestDeleteProduct(){
-
-		int selectedNum = productView.selectView();
-		Product deleteProduct = productView.deleteProductView(selectedNum);
+		
+		SelectView selectedProduct = new SelectView();
+		int selectedProductNum = selectedProduct.selectView();
+		Product deleteProduct = productView.deleteProductView(selectedProductNum);
 		boolean success = productDAO.deleteProduct(deleteProduct);
 		
 		AlertView alert = new AlertView();

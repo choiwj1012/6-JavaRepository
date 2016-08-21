@@ -2,18 +2,18 @@ package shoppingMall.repository;
 
 import java.util.ArrayList;
 
-import shoppingMall.vo.ProductInCart;
+import shoppingMall.vo.Product;
 
 public class CartRepository {
 
 	// 장바구니(카트) 배열
-	private ArrayList<ProductInCart> carts = new ArrayList<ProductInCart>();
+	private ArrayList<Product> carts = new ArrayList<Product>();
 	
 	// 장바구니(카트) 안의 상품 갯수
 	private int productNumberInCart;
 
 	// getter and setter
-	public ArrayList<ProductInCart> getCarts() {
+	public ArrayList<Product> getCarts() {
 		return carts;
 	}
 

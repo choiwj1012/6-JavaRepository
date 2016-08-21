@@ -101,7 +101,7 @@ public class MenuView {
 
 		while(true){
 			
-			String[] mainMenu = {"쇼핑몰의 메인 메뉴입니다.","메뉴를 선택 하세요","[c]. 구매하기","[m]. 회원정보수정","[r]. 회원정보조회","[o]. 로그아웃","[w]. 회원탈퇴"};
+			String[] mainMenu = {"쇼핑몰의 메인 메뉴입니다.","메뉴를 선택 하세요","[c]. 구매하기","[s]. 장바구니 확인","[m]. 회원정보수정","[r]. 회원정보조회","[o]. 로그아웃","[w]. 회원탈퇴"};
 			for(int i=0; i<mainMenu.length; i++){
 				System.out.println(mainMenu[i]);
 			}
@@ -113,6 +113,10 @@ public class MenuView {
 					MainController.cartController.requestPurchase(); // 구매하기
 					break;
 					
+				case 's' :
+					MainController.cartController.requestDisplayCartList(); // 장바구니 확인
+					break;
+											
 				case 'm' :
 					MainController.userController.requestUpdateUserInfo(); // 회원정보수정
 					break;
