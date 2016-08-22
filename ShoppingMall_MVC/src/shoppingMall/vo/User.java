@@ -5,10 +5,12 @@ import java.util.Date;
 public class User {
 
 	// variable
-	private String userID;
-	private String userPW;
-	private String userName;
-	private Date joinDate;
+	private int number;      // 고객번호
+	private String userID;   // 식별자
+	private String userPW;   // 비밀번호
+	private String userName; // 유저이름
+	private String userTel;  // 전화번호
+	private Date joinDate;   // 가입날짜
 	
 	
 	// constructor
@@ -23,23 +25,29 @@ public class User {
 		
 	}
 	
-	public User(String userID, String userPW, String userName){
+	public User(String userID, String userPW, String userName, String userTel){
 		
 		this.userID = userID;
 		this.userPW = userPW;
 		this.userName = userName;
+		this.userTel = userTel;
 		this.joinDate = new Date();
 		
 	}
 
 	// getter and setter
-	public String getUserID() {
-		return userID;
+	public int getNumber() {
+		return number;
 	}
 
+	
+	public void setNumber(int number) {
+		this.number = number;
+	}
 
-	public void setUserID(String userID) {
-		this.userID = userID;
+	
+	public String getUserID() {
+		return userID;
 	}
 
 
@@ -63,6 +71,16 @@ public class User {
 	}
 
 
+	public String getUserTel() {
+		return userTel;
+	}
+
+	
+	public void setUserTel(String userTel) {
+		this.userTel = userTel;
+	}
+
+	
 	public Date getJoinDate() {
 		return joinDate;
 	}

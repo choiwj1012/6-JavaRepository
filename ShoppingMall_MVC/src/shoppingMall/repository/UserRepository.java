@@ -18,7 +18,7 @@ public class UserRepository {
 	// constructor
 	public UserRepository() {
 
-		User admin = new User("admin","1111","관리자");
+		User admin = new User("admin","1111","관리자","111");
 		this.users.add(0, admin);
 		
 	}

@@ -108,12 +108,13 @@ public class CartDAO {
 		}
 
 	} // End of updateCartList()
-
 	
-	public void resetCart(){
-
-
-
-	} // End of resetCart()
+	public void logOut(){
+		
+		for(int i=0; i<cartRepository.getCarts().size(); i++){
+			cartRepository.getCarts().remove(0);	
+		}
+		
+	} // End of logOut()
 
 }

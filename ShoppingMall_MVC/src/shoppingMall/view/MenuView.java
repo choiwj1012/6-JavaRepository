@@ -62,7 +62,7 @@ public class MenuView {
 
 		while(true){
 
-			String[] adminMenu = {"관리자 메뉴입니다.","메뉴를 선택 하세요","1. 상품 조회","2. 상품 등록","3. 상품 수정","4. 상품 삭제","5. 메인메뉴로 가기"};
+			String[] adminMenu = {"관리자 메뉴입니다.","메뉴를 선택 하세요","1. 상품 조회","2. 상품 등록","3. 상품 수정","4. 상품 삭제","5. 유저 정보 확인","6. 메인메뉴로 가기"};
 			for(int i=0; i<adminMenu.length; i++){
 				System.out.println(adminMenu[i]);
 			}
@@ -86,8 +86,12 @@ public class MenuView {
 
 			} else if(selectedMain == 5){
 
-				break; // 종료
+				mainController.userController.requestAllUserList(); // 유저 정보 확인
 
+			} else if(selectedMain == 6){
+				
+				break; // 종료
+				
 			} else {
 
 				System.out.println("메뉴를 다시 선택해주세요");

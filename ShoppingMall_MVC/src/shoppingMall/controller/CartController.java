@@ -53,4 +53,10 @@ public class CartController{
 			
 	} // End of requestUpdateCartList()
 	
+	public void requestLogOut(){
+	
+		cartDAO.logOut();
+		
+	} 
+	
 }

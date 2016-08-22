@@ -1,5 +1,7 @@
 package shoppingMall.dao;
 
+import java.util.ArrayList;
+
 import shoppingMall.repository.UserRepository;
 import shoppingMall.vo.User;
 
@@ -26,7 +28,10 @@ public class UserDAO {
 			}
 		}
 
+		userRepository.setLastUserPosition(userRepository.getLastUserPosition() + 1);
+		newUser.setNumber(userRepository.getLastUserPosition());
 		userRepository.getUsers().add(newUser);
+		
 		success = true;
 
 		return success;
@@ -46,6 +51,10 @@ public class UserDAO {
 				if(updateUser.getUserName() != null){
 					userRepository.getUsers().get(i).setUserName(updateUser.getUserName());	
 				}
+				
+				if(updateUser.getUserTel() != null){
+					userRepository.getUsers().get(i).setUserTel(updateUser.getUserTel());
+				}
 				 
 			}
 		}
@@ -53,6 +62,17 @@ public class UserDAO {
 	} // End of updateUserInfo()
 
 
+	public ArrayList<User> selectAllUser(){
+		
+		ArrayList<User> users = null;
+		
+		users = userRepository.getUsers();
+		
+		return users;
+		
+	} // End of selectAllUser()
+	
+	
 	public User readUserInfo(){ // 로그인한 유저 정보 가져오기
 
 		User loginUser = userRepository.getUsers().get(userRepository.getLoginUserNumber());
@@ -61,7 +81,7 @@ public class UserDAO {
 
 	} // End of readUserInfo()
 
-
+	
 	public void withDrawMember(User loginUser){ // 탈퇴하기
 
 		userRepository.getUsers().remove(userRepository.getLoginUserNumber());
@@ -71,32 +91,21 @@ public class UserDAO {
 
 	public int logIn(User logInUser){ // 로그인하기
 
-		boolean isIDFind = false;
 		int userIdentifiedNumber = -1;
 
 		for(int i=0; i<userRepository.getUsers().size(); i++){
-			if(logInUser.getUserID().equals(userRepository.getUsers().get(i).getUserID())){
+			if(logInUser.getUserID().equals(userRepository.getUsers().get(i).getUserID()) && 
+					logInUser.getUserPW().equals(userRepository.getUsers().get(i).getUserPW()))
+			{
 
-				isIDFind = true;
 				userRepository.setLoginUserNumber(i);
 				userIdentifiedNumber = userRepository.getLoginUserNumber();
 				break;
 
 			}
 		}
-
-		if(!isIDFind){
 			
-			return userIdentifiedNumber;
-		}
-		
-		if(logInUser.getUserPW().equals(userRepository.getUsers().get(userRepository.getLoginUserNumber()).getUserPW())){
-			
-			return userIdentifiedNumber;
-			
-		}
-
-		return userIdentifiedNumber = -1;
+		return userIdentifiedNumber;
 
 	} // End of logIn()
 

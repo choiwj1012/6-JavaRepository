@@ -1,5 +1,7 @@
 package shoppingMall.controller;
 
+import java.util.ArrayList;
+
 import shoppingMall.dao.UserDAO;
 import shoppingMall.view.AlertView;
 import shoppingMall.view.UserView;
@@ -51,6 +53,15 @@ public class UserController{
 			
 	} // End of requestUpdateUserInfo()
 
+	
+	public void requestAllUserList(){
+		
+		ArrayList<User> users = userDAO.selectAllUser();
+		UserView userView = new UserView(mainController);
+		userView.allUserView(users);
+		
+	} // End of requestAllUserList()
+	
 	
 	public void requestReadUserInfo(){ // 유저정보 읽기 요청
 		
@@ -108,6 +119,7 @@ public class UserController{
 		
 		if(agreeLogOut){
 			userDAO.logOut(loginUser);
+			mainController.cartController.requestLogOut();
 			mainController.menuController.requestMainMenu();
 		}
 		

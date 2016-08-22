@@ -1,5 +1,6 @@
 package shoppingMall.view;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import shoppingMall.controller.MainController;
@@ -32,7 +33,10 @@ public class UserView {
 			System.out.print("사용자 이름 : ");
 			String userName = keyboard.next();
 
-			User newUser = new User(userID, userPW, userName);
+			System.out.print("전화번호 : ");
+			String userTel = keyboard.next();
+			
+			User newUser = new User(userID, userPW, userName, userTel);
 
 			return newUser;
 
@@ -41,6 +45,23 @@ public class UserView {
 	} // End of addUserView()
 
 
+	public void allUserView(ArrayList<User> users){
+		
+		System.out.println("사용자 번호\t사용자 ID\t사용자 PW\t사용자 이름\t사용자 전화번호\t가입날짜");
+		for(int i=0; i<users.size(); i++){
+			
+			System.out.print(users.get(i).getNumber() + "\t");
+			System.out.print(users.get(i).getUserID() + "\t");
+			System.out.print(users.get(i).getUserPW() + "\t");
+			System.out.print(users.get(i).getUserName() + "\t");
+			System.out.print(users.get(i).getUserTel() + "\t");
+			System.out.println(users.get(i).getJoinDate());
+			
+		}
+		
+	} // End of allUserView()
+	
+	
 	public User updateUserInfoView(int userIdentifiedNumber){
 
 		User updateUser = new User();	
@@ -56,7 +77,7 @@ public class UserView {
 
 
 				System.out.println("수정을 원하는 목록을 선택하십시오");
-				System.out.println("1. 비밀번호 || 2. 이름 || 3. 취소");
+				System.out.println("1. 비밀번호 || 2. 이름 || 3. 전화번호 || 4. 취소");
 				int selectedNum = keyboard.nextInt();
 
 				if(selectedNum == 1){
@@ -73,12 +94,18 @@ public class UserView {
 
 				} else if(selectedNum == 3){
 
+					System.out.println("3. 새 전화번호를 입력하십시오");
+					String updateUserTel = keyboard.next();
+					updateUser.setUserTel(updateUserTel);
+
+				} else if(selectedNum == 4){
+
 					return updateUser;
 
 				} else {
-
+					
 					System.out.println("잘못 눌렀군요");
-
+					
 				}
 
 			} // End of while
@@ -105,8 +132,11 @@ public class UserView {
 	public void readUserInfoView(User loginUser){
 
 		System.out.println("당신의 회원정보는 다음과 같습니다");
+		System.out.println("회원번호 : " + loginUser.getNumber());
 		System.out.println("아이디 : " + loginUser.getUserID());
 		System.out.println("이름 : " + loginUser.getUserName());
+		System.out.println("전화번호 : " + loginUser.getUserTel());
+		System.out.println("가입일 : " + loginUser.getJoinDate());
 		
 	} // End of readUserInfoView()
 
@@ -116,8 +146,11 @@ public class UserView {
 		boolean agreeWithdraw = false;
 		
 		System.out.println("당신의 회원정보는 다음과 같습니다");
+		System.out.println("회원번호 : " + loginUser.getNumber());
 		System.out.println("아이디 : " + loginUser.getUserID());
 		System.out.println("이름 : " + loginUser.getUserName());
+		System.out.println("전화번호 : " + loginUser.getUserTel());
+		System.out.println("가입일 : " + loginUser.getJoinDate());
 		System.out.println("정말로 탈퇴하시겠습니까? [y] 혹은 [n] 을 누르십시오");
 		char yesOrNo = keyboard.next().charAt(0); 
 		
