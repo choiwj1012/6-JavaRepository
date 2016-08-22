@@ -8,21 +8,21 @@ import shoppingMall.vo.User;
 public class UserController{
 	
 	// variable
+	private MainController mainController;
 	private UserDAO userDAO;
-	private UserView userView;
 	
 	// constructor
-	public UserController(){
+	public UserController(MainController mainController){
 		
+		this.mainController = mainController;
 		this.userDAO = new UserDAO();
-		this.userView = new UserView();
 		
 	}
 
 	// method
 	public void requestAddUser(){
 		
-		UserView userView = new UserView();
+		UserView userView = new UserView(mainController);
 		User newUser = userView.addUserView();
 		boolean success = userDAO.addUser(newUser);
 		
@@ -43,6 +43,7 @@ public class UserController{
 	
 	public void requestUpdateUserInfo(){
 		
+		UserView userView = new UserView(mainController);
 		User checkedUser = userView.checkLogInUserView();
 		int userIdentifiedNumber = userDAO.logIn(checkedUser);	
 		User updateUser = userView.updateUserInfoView(userIdentifiedNumber);
@@ -53,6 +54,7 @@ public class UserController{
 	
 	public void requestReadUserInfo(){
 		
+		UserView userView = new UserView(mainController);
 		User loginUser = userDAO.readUserInfo();
 		userView.readUserInfoView(loginUser);
 		
@@ -61,12 +63,13 @@ public class UserController{
 	
 	public void requestWithdrawMember(){
 
+		UserView userView = new UserView(mainController);
 		User loginUser = userDAO.readUserInfo();
 		boolean agreeWithdraw = userView.withdrawMemberView(loginUser);
 		
 		if(agreeWithdraw){
 			userDAO.withDrawMember(loginUser);
-			MainController.menuController.requestMainMenu();
+			mainController.menuController.requestMainMenu();
 		}
 		
 	} // End of requestWithDrawMember()
@@ -74,7 +77,7 @@ public class UserController{
 	
 	public void requestLogIn(){
 		
-		UserView userView = new UserView();
+		UserView userView = new UserView(mainController);
 		User logInUser = userView.logInView();
 		
 		int UserIdentifiedNumber = userDAO.logIn(logInUser);
@@ -82,7 +85,7 @@ public class UserController{
 		
 		if(UserIdentifiedNumber == 0){
 			
-			MainController.menuController.requestAdminMenu();
+			mainController.menuController.requestAdminMenu();
 			
 		} else if(UserIdentifiedNumber == -1){
 			
@@ -90,7 +93,7 @@ public class UserController{
 			
 		} else {
 			
-			MainController.menuController.requestUserMenu();
+			mainController.menuController.requestUserMenu();
 			
 		}
 		
@@ -99,12 +102,13 @@ public class UserController{
 	
 	public void requestLogOut(){
 		
+		UserView userView = new UserView(mainController);
 		User loginUser = userDAO.readUserInfo();
 		boolean agreeLogOut = userView.logOutView();
 		
 		if(agreeLogOut){
 			userDAO.logOut(loginUser);
-			MainController.menuController.requestMainMenu();
+			mainController.menuController.requestMainMenu();
 		}
 		
 	} // End of requestLogOut()

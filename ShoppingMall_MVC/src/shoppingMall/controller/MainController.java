@@ -1,10 +1,22 @@
 package shoppingMall.controller;
 
-public interface MainController {
+public class MainController {
 
-	MenuController menuController = new MenuController();
-	UserController userController = new UserController();
-	ProductController productController = new ProductController();
-	CartController cartController = new CartController();
+	// variable
+	public MenuController menuController;
+	public UserController userController;
+	public ProductController productController;
+	public CartController cartController;
+	
+	// constructor
+	public MainController() {
+	
+		menuController = new MenuController(this);
+		userController = new UserController(this);
+		productController = new ProductController(this);
+		cartController = new CartController(this);	
+		
+	}
+	
 	
 }

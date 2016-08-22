@@ -8,11 +8,12 @@ import shoppingMall.vo.User;
 public class UserView {
 
 	private Scanner keyboard;
-
-	public UserView(){
+	private MainController mainController;
+	
+	public UserView(MainController mainController){
 
 		this.keyboard = new Scanner(System.in);
-
+		this.mainController = mainController;
 	}
 
 
@@ -47,7 +48,7 @@ public class UserView {
 		if(userIdentifiedNumber == -1){
 
 			System.out.println("잘못입력하셨습니다. 재로그인 바랍니다");
-			MainController.userController.requestUpdateUserInfo();
+			mainController.userController.requestUpdateUserInfo();
 
 		} else {
 

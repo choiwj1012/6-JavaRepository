@@ -6,7 +6,9 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
-		MainController.menuController.requestMainMenu();
+		MainController mainController = new MainController();
+		
+		mainController.menuController.requestMainMenu();
 		
 	}
 	

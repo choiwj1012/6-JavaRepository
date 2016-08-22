@@ -10,11 +10,14 @@ public class CartView {
 	
 	// variable
 	Scanner keyboard;
+	MainController mainController;
 	
 	// constructor
-	public CartView(){
+	public CartView(MainController mainController){
 		
 		this.keyboard = new Scanner(System.in);
+		this.mainController = mainController;
+		
 	}
 
 	// method
@@ -38,11 +41,11 @@ public class CartView {
 		
 		if(mainOrPayment == 'b'){
 			
-			MainController.menuController.requestUserMenu();
+			mainController.menuController.requestUserMenu();
 			
 		} else if(mainOrPayment == 'm'){
 			
-			MainController.cartController.requestUpdateCartList();
+			mainController.cartController.requestUpdateCartList();
 			
 		} else if(mainOrPayment == 'p'){
 			
@@ -70,11 +73,11 @@ public class CartView {
 		
 		if(yesOrNo == 'y'){
 			
-			MainController.cartController.requestPurchase();
+			mainController.cartController.requestPurchase();
 			
 		} else if(yesOrNo == 'n'){
 			
-			MainController.menuController.requestUserMenu();
+			mainController.menuController.requestUserMenu();
 			
 		} else {
 			

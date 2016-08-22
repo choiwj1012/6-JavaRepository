@@ -8,22 +8,23 @@ import shoppingMall.view.ProductView;
 import shoppingMall.view.SelectView;
 import shoppingMall.vo.Product;
 
-public class ProductController implements MainController {
+public class ProductController {
 	
 	// variable
+	private MainController mainController;
 	private ProductDAO productDAO;
-	private ProductView productView;
 	
 	// constructor
-	public ProductController(){
+	public ProductController(MainController mainController){
 
+		this.mainController = mainController;
 		this.productDAO = new ProductDAO();
-		this.productView = new ProductView();
 	}
 
 	// method
 	public void requestAddProduct(){
 		
+		ProductView productView = new ProductView();
 		Product newProduct = productView.addProductView();
 		productDAO.addProduct(newProduct);
 
@@ -32,6 +33,7 @@ public class ProductController implements MainController {
 
 	public void requestDisplayProductList(){
 
+		ProductView productView = new ProductView();
 		ArrayList<Product> products = productDAO.selectAllProduct();
 		productView.disPlayProductList(products);
 
@@ -40,6 +42,7 @@ public class ProductController implements MainController {
 
 	public void requestUpdateProduct(){
 		
+		ProductView productView = new ProductView();
 		SelectView selectedProduct = new SelectView();
 		int selectedProductNum = selectedProduct.selectView();
 		Product updateProduct = productView.updateProductView(selectedProductNum);
@@ -50,6 +53,7 @@ public class ProductController implements MainController {
 
 	public void requestDeleteProduct(){
 		
+		ProductView productView = new ProductView();
 		SelectView selectedProduct = new SelectView();
 		int selectedProductNum = selectedProduct.selectView();
 		Product deleteProduct = productView.deleteProductView(selectedProductNum);
