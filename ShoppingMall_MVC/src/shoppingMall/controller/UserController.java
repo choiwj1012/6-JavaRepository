@@ -51,8 +51,8 @@ public class UserController{
 	public void requestUpdateUserInfo(){ // 유저정보 수정하기 요청
 		
 		UserView userView = new UserView(mainController);
-		User checkedUser = mainController.logInOutController.requestCheckUser();
-		int userIdentifiedNumber = mainController.logInOutController.getLogInOutDAO().logIn(checkedUser);
+		User checkedUser = mainController.getLogInOutController().requestCheckUser();
+		int userIdentifiedNumber = mainController.getLogInOutController().getLogInOutDAO().logIn(checkedUser);
 		User updateUser = userView.updateUserInfoView(userIdentifiedNumber);
 		userDAO.updateUserInfo(updateUser, userIdentifiedNumber);	
 			
@@ -85,7 +85,7 @@ public class UserController{
 		
 		if(agreeWithdraw){
 			userDAO.withDrawMember(loginUser);
-			mainController.menuController.requestMainMenu();
+			mainController.getMenuController().requestMainMenu();
 		}
 		
 	} // End of requestWithDrawMember()

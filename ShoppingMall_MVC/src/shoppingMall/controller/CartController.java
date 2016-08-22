@@ -24,7 +24,7 @@ public class CartController{
 	// method
 	public void requestPurchase(){ // 구매하기 요청
 		
-		mainController.productController.requestDisplayProductList();
+		mainController.getProductController().requestDisplayProductList();
 		SelectView selectedProduct = new SelectView();
 		int selectedProductNum = selectedProduct.selectView();
 		boolean success = cartDAO.purchase(selectedProductNum);

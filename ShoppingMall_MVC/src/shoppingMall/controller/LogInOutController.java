@@ -30,12 +30,14 @@ public class LogInOutController {
 		LogInOutView logInOutView = new LogInOutView(mainController);
 		User logInUser = logInOutView.logInView();
 		
+		
+		
 		int UserIdentifiedNumber = logInOutDAO.logIn(logInUser);
 		AlertView alertView = new AlertView();
 
 		if(UserIdentifiedNumber == 0){
 
-			mainController.menuController.requestAdminMenu();
+			mainController.getMenuController().requestAdminMenu();
 
 		} else if(UserIdentifiedNumber == -1){
 
@@ -43,7 +45,7 @@ public class LogInOutController {
 
 		} else {
 
-			mainController.menuController.requestUserMenu();
+			mainController.getMenuController().requestUserMenu();
 
 		}
 
@@ -62,13 +64,13 @@ public class LogInOutController {
 	public void requestLogOut(){ // 로그아웃 요청
 
 		LogInOutView logInOutView = new LogInOutView(mainController);
-		User loginUser = mainController.userController.getUserDAO().readUserInfo();
+		User loginUser = mainController.getUserController().getUserDAO().readUserInfo();
 		boolean agreeLogOut = logInOutView.logOutView();
 
 		if(agreeLogOut){
 			logInOutDAO.logOut(loginUser);
-			mainController.cartController.requestLogOut();
-			mainController.menuController.requestMainMenu();
+			mainController.getCartController().requestLogOut();
+			mainController.getMenuController().requestMainMenu();
 		}
 
 	} // End of requestLogOut()

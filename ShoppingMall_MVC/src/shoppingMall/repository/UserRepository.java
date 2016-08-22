@@ -7,41 +7,45 @@ import shoppingMall.vo.User;
 public class UserRepository {
 
 	// 유저 배열
-	private ArrayList<User> users = new ArrayList<User>();
+	private static ArrayList<User> users = new ArrayList<User>();
 
 	// 유저의 수
-	private int lastUserPosition;
+	private static int lastUserPosition;
 
 	// 로그인한 유저정보
-	private int loginUserNumber;
+	private static int loginUserNumber;
 
 	// constructor
 	public UserRepository() {
 
 		User admin = new User("admin","1111","관리자","111");
-		this.users.add(0, admin);
+		users.add(0, admin);
 		
 	}
 	
 	// getter and setter
-	public ArrayList<User> getUsers() {
+	public static ArrayList<User> getUsers() {
 		return users;
 	}
 
-	public int getLastUserPosition() {
+	public static void setUsers(ArrayList<User> users) {
+		UserRepository.users = users;
+	}
+
+	public static int getLastUserPosition() {
 		return lastUserPosition;
 	}
 
-	public int getLoginUserNumber() {
+	public static void setLastUserPosition(int lastUserPosition) {
+		UserRepository.lastUserPosition = lastUserPosition;
+	}
+
+	public static int getLoginUserNumber() {
 		return loginUserNumber;
 	}
 
-	public void setLoginUserNumber(int loginUserNumber) {
-		this.loginUserNumber = loginUserNumber;
+	public static void setLoginUserNumber(int loginUserNumber) {
+		UserRepository.loginUserNumber = loginUserNumber;
 	}
-
-	public void setLastUserPosition(int lastUserPosition) {
-		this.lastUserPosition = lastUserPosition;
-	}
-
+	
 }

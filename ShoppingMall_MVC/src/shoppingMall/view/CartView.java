@@ -41,11 +41,11 @@ public class CartView {
 		
 		if(mainOrPayment == 'b'){
 			
-			mainController.menuController.requestUserMenu();
+			mainController.getMenuController().requestUserMenu();
 			
 		} else if(mainOrPayment == 'm'){
 			
-			mainController.cartController.requestUpdateCartList();
+			mainController.getCartController().requestUpdateCartList();
 			
 		} else if(mainOrPayment == 'p'){
 			
@@ -73,11 +73,11 @@ public class CartView {
 		
 		if(yesOrNo == 'y'){
 			
-			mainController.cartController.requestPurchase();
+			mainController.getCartController().requestPurchase();
 			
 		} else if(yesOrNo == 'n'){
 			
-			mainController.menuController.requestUserMenu();
+			mainController.getMenuController().requestUserMenu();
 			
 		} else {
 			

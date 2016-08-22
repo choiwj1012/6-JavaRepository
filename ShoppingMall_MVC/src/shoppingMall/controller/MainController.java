@@ -3,11 +3,11 @@ package shoppingMall.controller;
 public class MainController {
 
 	// variable
-	public MenuController menuController;
-	public UserController userController;
-	public ProductController productController;
-	public CartController cartController;
-	public LogInOutController logInOutController;
+	private MenuController menuController;
+	private UserController userController;
+	private ProductController productController;
+	private CartController cartController;
+	private LogInOutController logInOutController;
 	
 	// constructor
 	public MainController() {
@@ -20,5 +20,25 @@ public class MainController {
 		
 	}
 	
-	
+	// getter and setter
+	public MenuController getMenuController() {
+		return menuController;
+	}
+
+	public UserController getUserController() {
+		return userController;
+	}
+
+	public ProductController getProductController() {
+		return productController;
+	}
+
+	public CartController getCartController() {
+		return cartController;
+	}
+
+	public LogInOutController getLogInOutController() {
+		return logInOutController;
+	}
+
 }

@@ -5,39 +5,45 @@ import shoppingMall.vo.User;
 
 public class LogInOutDAO {
 	
-	// variable
-	UserRepository userRepository;
-
-	// constructor
-	public LogInOutDAO(){
-
-		this.userRepository = new UserRepository();
-
-	}
 	public int logIn(User logInUser){ // 로그인하기
 
 		int userIdentifiedNumber = -1;
+		int loginUserNumber = -1;
+		boolean isFind = false;
+		
+		for(int i=0; i<UserRepository.getUsers().size(); i++){
+			if(logInUser.getUserID().equals(UserRepository.getUsers().get(i).getUserID())){
 
-		for(int i=0; i<userRepository.getUsers().size(); i++){
-			if(logInUser.getUserID().equals(userRepository.getUsers().get(i).getUserID()) && logInUser.getUserPW().equals(userRepository.getUsers().get(i).getUserPW()))
-			{
-
-				userRepository.setLoginUserNumber(i);
-				userIdentifiedNumber = userRepository.getLoginUserNumber();
-				System.out.println("하하하하하하하");
+				loginUserNumber = i;
+				UserRepository.setLoginUserNumber(i);
+				userIdentifiedNumber = UserRepository.getLoginUserNumber();
+				isFind = true;
 				break;
 
 			}
 		}
-
-		return userIdentifiedNumber;
+		
+		if(!isFind){
+			
+			return userIdentifiedNumber;
+			
+		}
+	
+		if(logInUser.getUserPW().equals(UserRepository.getUsers().get(loginUserNumber).getUserPW())){
+			
+			
+			return userIdentifiedNumber;
+			
+		}
+		
+		return userIdentifiedNumber = -1;
 
 	} // End of logIn()
 
 
 	public void logOut(User loginUser){ // 로그아웃하기
 
-		userRepository.setLoginUserNumber(-1);
+		UserRepository.setLoginUserNumber(-1);
 
 	} // End of logOut()
 

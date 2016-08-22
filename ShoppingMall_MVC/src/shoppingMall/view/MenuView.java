@@ -21,7 +21,7 @@ public class MenuView {
 	// method
 	public void mainMenuView(){
 
-		mainController.productController.requestDisplayProductList();
+		mainController.getProductController().requestDisplayProductList();
 
 		boolean exit = false;
 		while(!exit){
@@ -35,11 +35,11 @@ public class MenuView {
 			int selectedMenu = keyboard.nextInt();
 			if(selectedMenu == 1){
 
-				mainController.userController.requestAddUser(); // 회원가입하기
+				mainController.getUserController().requestAddUser(); // 회원가입하기
 
 			} else if(selectedMenu == 2){
 
-				mainController.logInOutController.requestLogIn(); // 로그인하기
+				mainController.getLogInOutController().requestLogIn(); // 로그인하기
 
 			} else if(selectedMenu == 3){
 
@@ -70,23 +70,23 @@ public class MenuView {
 			int selectedMain = keyboard.nextInt();
 			if(selectedMain == 1){
 
-				mainController.productController.requestDisplayProductList(); // 상품조회
+				mainController.getProductController().requestDisplayProductList(); // 상품조회
 
 			} else if(selectedMain == 2){
 
-				mainController.productController.requestAddProduct(); // 상품등록
+				mainController.getProductController().requestAddProduct(); // 상품등록
 
 			} else if(selectedMain == 3){
 
-				mainController.productController.requestUpdateProduct(); // 상품수정
+				mainController.getProductController().requestUpdateProduct(); // 상품수정
 
 			} else if(selectedMain == 4){
 
-				mainController.productController.requestDeleteProduct(); // 상품삭제
+				mainController.getProductController().requestDeleteProduct(); // 상품삭제
 
 			} else if(selectedMain == 5){
 
-				mainController.userController.requestAllUserList(); // 유저 정보 확인
+				mainController.getUserController().requestAllUserList(); // 유저 정보 확인
 
 			} else if(selectedMain == 6){
 				
@@ -116,28 +116,28 @@ public class MenuView {
 			switch(selectedMenu){
 			
 				case 'c' :
-					mainController.cartController.requestPurchase(); // 구매하기
+					mainController.getCartController().requestPurchase(); // 구매하기
 					break;
 					
 				case 's' :
-					mainController.cartController.requestDisplayCartList(); // 장바구니 확인
+					mainController.getCartController().requestDisplayCartList(); // 장바구니 확인
 					break;
 											
 				case 'm' :
-					mainController.userController.requestUpdateUserInfo(); // 회원정보수정
+					mainController.getUserController().requestUpdateUserInfo(); // 회원정보수정
 					break;
 					
 				case 'r' :
-					mainController.userController.requestReadUserInfo(); // 회원정보조회
+					mainController.getUserController().requestReadUserInfo(); // 회원정보조회
 					break;
 					
 				case 'o' :
 					System.out.println("로그아웃되었습니다.");
-					mainController.logInOutController.requestLogOut(); // 로그아웃
+					mainController.getLogInOutController().requestLogOut(); // 로그아웃
 					break;
 					
 				case 'w' :
-					mainController.userController.requestWithdrawMember(); // 회원탈퇴
+					mainController.getUserController().requestWithdrawMember(); // 회원탈퇴
 					break;
 					
 				default :

@@ -69,7 +69,7 @@ public class UserView {
 		if(userIdentifiedNumber == -1){
 
 			System.out.println("잘못입력하셨습니다. 재로그인 바랍니다");
-			mainController.userController.requestUpdateUserInfo();
+			mainController.getUserController().requestUpdateUserInfo();
 
 		} else {
 

@@ -22,15 +22,15 @@ public class UserDAO {
 
 		boolean success = false;
 
-		for(int i=0; i<userRepository.getUsers().size(); i++){
-			if(newUser.getUserID().equals(userRepository.getUsers().get(i).getUserID())){
+		for(int i=0; i<UserRepository.getUsers().size(); i++){
+			if(newUser.getUserID().equals(UserRepository.getUsers().get(i).getUserID())){
 				return success;
 			}
 		}
-
-		userRepository.setLastUserPosition(userRepository.getLastUserPosition() + 1);
-		newUser.setNumber(userRepository.getLastUserPosition());
-		userRepository.getUsers().add(newUser);
+		
+		UserRepository.setLastUserPosition(UserRepository.getLastUserPosition());
+		newUser.setNumber(UserRepository.getLastUserPosition() + 1);
+		UserRepository.getUsers().add(newUser);
 		
 		success = true;
 
@@ -41,19 +41,19 @@ public class UserDAO {
 
 	public void updateUserInfo(User updateUser, int userIdentifiedNumber){ // 유저 수정
 
-		for(int i=0; i<userRepository.getUsers().size(); i++){
-			if(userIdentifiedNumber == userRepository.getLoginUserNumber()){
+		for(int i=0; i<UserRepository.getUsers().size(); i++){
+			if(userIdentifiedNumber == UserRepository.getLoginUserNumber()){
 			
 				if(updateUser.getUserPW() != null){
-					userRepository.getUsers().get(i).setUserPW(updateUser.getUserPW());	
+					UserRepository.getUsers().get(i).setUserPW(updateUser.getUserPW());	
 				}
 				
 				if(updateUser.getUserName() != null){
-					userRepository.getUsers().get(i).setUserName(updateUser.getUserName());	
+					UserRepository.getUsers().get(i).setUserName(updateUser.getUserName());	
 				}
 				
 				if(updateUser.getUserTel() != null){
-					userRepository.getUsers().get(i).setUserTel(updateUser.getUserTel());
+					UserRepository.getUsers().get(i).setUserTel(updateUser.getUserTel());
 				}
 				 
 			}
@@ -66,7 +66,7 @@ public class UserDAO {
 		
 		ArrayList<User> users = null;
 		
-		users = userRepository.getUsers();
+		users = UserRepository.getUsers();
 		
 		return users;
 		
@@ -75,7 +75,7 @@ public class UserDAO {
 	
 	public User readUserInfo(){ // 로그인한 유저 정보 가져오기
 
-		User loginUser = userRepository.getUsers().get(userRepository.getLoginUserNumber());
+		User loginUser = UserRepository.getUsers().get(UserRepository.getLoginUserNumber());
 			
 		return loginUser;
 
@@ -84,7 +84,7 @@ public class UserDAO {
 	
 	public void withDrawMember(User loginUser){ // 탈퇴하기
 
-		userRepository.getUsers().remove(userRepository.getLoginUserNumber());
+		UserRepository.getUsers().remove(UserRepository.getLoginUserNumber());
 
 	} // End of withDrawMember()
 
