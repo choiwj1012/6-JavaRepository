@@ -115,20 +115,6 @@ public class UserView {
 
 	} // End of updateUserInfoView()
 
-
-	public User checkLogInUserView(){
-
-		User checkedUser = null;
-
-		System.out.println("본인 정보 수정을 위해서 재 로그인 하셔야 합니다");
-
-		checkedUser = this.logInView();
-
-		return checkedUser;
-
-	}
-
-
 	public void readUserInfoView(User loginUser){
 
 		System.out.println("당신의 회원정보는 다음과 같습니다");
@@ -162,39 +148,5 @@ public class UserView {
 		return agreeWithdraw;
 		
 	} // End of withDrawMemberView()
-
-
-	public User logInView(){
-
-		System.out.println("로그인 정보를 입력하세요");
-
-		System.out.println("사용자 ID : ");
-		String userID = keyboard.next();
-
-		System.out.println("사용자 PW : ");
-		String userPW = keyboard.next();
-
-		User logInUser = new User(userID, userPW);
-
-		return logInUser;
-
-	} // End of logInView()
-
-
-	public boolean logOutView(){
-
-		boolean agreeLogOut = false;
-		
-		System.out.println("정말로 로그아웃 하십니까? [y] 혹은 [n] 을 누르십시오");
-		char yesOrNo = keyboard.next().charAt(0); 
-		
-		if(yesOrNo == 'y'){
-			agreeLogOut = true;
-			return agreeLogOut;
-		}
-
-		return agreeLogOut;
-
-	} // End of logOutView()
 
 }

@@ -20,8 +20,13 @@ public class UserController{
 		this.userDAO = new UserDAO();
 		
 	}
-
+	
 	// method
+	public UserDAO getUserDAO() {
+		return userDAO;
+	}
+
+	
 	public void requestAddUser(){ // 유저 등록하기 요청
 		
 		UserView userView = new UserView(mainController);
@@ -46,8 +51,8 @@ public class UserController{
 	public void requestUpdateUserInfo(){ // 유저정보 수정하기 요청
 		
 		UserView userView = new UserView(mainController);
-		User checkedUser = userView.checkLogInUserView();
-		int userIdentifiedNumber = userDAO.logIn(checkedUser);	
+		User checkedUser = mainController.logInOutController.requestCheckUser();
+		int userIdentifiedNumber = mainController.logInOutController.getLogInOutDAO().logIn(checkedUser);
 		User updateUser = userView.updateUserInfoView(userIdentifiedNumber);
 		userDAO.updateUserInfo(updateUser, userIdentifiedNumber);	
 			
@@ -84,45 +89,5 @@ public class UserController{
 		}
 		
 	} // End of requestWithDrawMember()
-
-	
-	public void requestLogIn(){ // 로그인 요청
-		
-		UserView userView = new UserView(mainController);
-		User logInUser = userView.logInView();
-		
-		int UserIdentifiedNumber = userDAO.logIn(logInUser);
-		AlertView alertView = new AlertView();
-		
-		if(UserIdentifiedNumber == 0){
-			
-			mainController.menuController.requestAdminMenu();
-			
-		} else if(UserIdentifiedNumber == -1){
-			
-			alertView.alert("로그인에 실패하였습니다");
-			
-		} else {
-			
-			mainController.menuController.requestUserMenu();
-			
-		}
-		
-	} // End of requestLogIn()
-
-	
-	public void requestLogOut(){ // 로그아웃 요청
-		
-		UserView userView = new UserView(mainController);
-		User loginUser = userDAO.readUserInfo();
-		boolean agreeLogOut = userView.logOutView();
-		
-		if(agreeLogOut){
-			userDAO.logOut(loginUser);
-			mainController.cartController.requestLogOut();
-			mainController.menuController.requestMainMenu();
-		}
-		
-	} // End of requestLogOut()
 
 }

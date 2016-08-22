@@ -88,32 +88,4 @@ public class UserDAO {
 
 	} // End of withDrawMember()
 
-
-	public int logIn(User logInUser){ // 로그인하기
-
-		int userIdentifiedNumber = -1;
-
-		for(int i=0; i<userRepository.getUsers().size(); i++){
-			if(logInUser.getUserID().equals(userRepository.getUsers().get(i).getUserID()) && 
-					logInUser.getUserPW().equals(userRepository.getUsers().get(i).getUserPW()))
-			{
-
-				userRepository.setLoginUserNumber(i);
-				userIdentifiedNumber = userRepository.getLoginUserNumber();
-				break;
-
-			}
-		}
-			
-		return userIdentifiedNumber;
-
-	} // End of logIn()
-
-
-	public void logOut(User loginUser){ // 로그아웃하기
-
-		userRepository.setLoginUserNumber(-1);
-
-	} // End of logOut()
-
 }

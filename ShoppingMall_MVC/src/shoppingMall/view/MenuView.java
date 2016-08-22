@@ -39,7 +39,7 @@ public class MenuView {
 
 			} else if(selectedMenu == 2){
 
-				mainController.userController.requestLogIn(); // 로그인하기
+				mainController.logInOutController.requestLogIn(); // 로그인하기
 
 			} else if(selectedMenu == 3){
 
@@ -133,7 +133,7 @@ public class MenuView {
 					
 				case 'o' :
 					System.out.println("로그아웃되었습니다.");
-					mainController.userController.requestLogOut(); // 로그아웃
+					mainController.logInOutController.requestLogOut(); // 로그아웃
 					break;
 					
 				case 'w' :

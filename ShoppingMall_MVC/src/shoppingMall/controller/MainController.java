@@ -7,6 +7,7 @@ public class MainController {
 	public UserController userController;
 	public ProductController productController;
 	public CartController cartController;
+	public LogInOutController logInOutController;
 	
 	// constructor
 	public MainController() {
@@ -15,6 +16,7 @@ public class MainController {
 		userController = new UserController(this);
 		productController = new ProductController(this);
 		cartController = new CartController(this);	
+		logInOutController = new LogInOutController(this); 
 		
 	}
 	
