@@ -18,7 +18,7 @@ public class ProductDAO {
 	
 	
 	// method
-	public void addProduct(Product product){
+	public void addProduct(Product product){ // 제품 등록 
 		
 		productRepository.setLastProductPosition(productRepository.getLastProductPosition() + 1);  
 		product.setNumber(productRepository.getLastProductPosition());
@@ -27,7 +27,7 @@ public class ProductDAO {
 	} // End of addProduct()
 	
 	
-	public ArrayList<Product> selectAllProduct(){
+	public ArrayList<Product> selectAllProduct(){ // 전체 제품 리스트 선택
 		
 		ArrayList<Product> products = productRepository.getProduct();
 		
@@ -36,7 +36,7 @@ public class ProductDAO {
 	} // End of selectAllProduct()
 	
 	
-	public void updateProduct(Product updateProduct){
+	public void updateProduct(Product updateProduct){ // 제품 수정
 	
 		for(int i=0; i<productRepository.getProduct().size(); i++){
 			if(updateProduct.getNumber() == productRepository.getProduct().get(i).getNumber()){
@@ -59,7 +59,7 @@ public class ProductDAO {
 	} // End of updateProductInfo()
 	
 	
-	public boolean deleteProduct(Product deleteProduct){
+	public boolean deleteProduct(Product deleteProduct){ // 제품 삭제
 		
 		boolean success = false;
 		

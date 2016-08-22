@@ -16,7 +16,7 @@ public class UserDAO {
 	}
 
 	// method
-	public boolean addUser(User newUser){
+	public boolean addUser(User newUser){ // 유저 등록
 
 		boolean success = false;
 
@@ -34,7 +34,7 @@ public class UserDAO {
 	} // End of addUser()
 
 
-	public void updateUserInfo(User updateUser, int userIdentifiedNumber){
+	public void updateUserInfo(User updateUser, int userIdentifiedNumber){ // 유저 수정
 
 		for(int i=0; i<userRepository.getUsers().size(); i++){
 			if(userIdentifiedNumber == userRepository.getLoginUserNumber()){
@@ -53,7 +53,7 @@ public class UserDAO {
 	} // End of updateUserInfo()
 
 
-	public User readUserInfo(){
+	public User readUserInfo(){ // 로그인한 유저 정보 가져오기
 
 		User loginUser = userRepository.getUsers().get(userRepository.getLoginUserNumber());
 			
@@ -62,14 +62,14 @@ public class UserDAO {
 	} // End of readUserInfo()
 
 
-	public void withDrawMember(User loginUser){
+	public void withDrawMember(User loginUser){ // 탈퇴하기
 
 		userRepository.getUsers().remove(userRepository.getLoginUserNumber());
 
 	} // End of withDrawMember()
 
 
-	public int logIn(User logInUser){
+	public int logIn(User logInUser){ // 로그인하기
 
 		boolean isIDFind = false;
 		int userIdentifiedNumber = -1;
@@ -101,11 +101,10 @@ public class UserDAO {
 	} // End of logIn()
 
 
-	public void logOut(User loginUser){
+	public void logOut(User loginUser){ // 로그아웃하기
 
 		userRepository.setLoginUserNumber(-1);
 
 	} // End of logOut()
-
 
 }

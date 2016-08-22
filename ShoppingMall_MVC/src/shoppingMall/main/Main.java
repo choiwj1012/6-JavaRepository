@@ -8,7 +8,7 @@ public class Main {
 		
 		MainController mainController = new MainController();
 		
-		mainController.menuController.requestMainMenu();
+		mainController.menuController.requestMainMenu(); // 메인 메뉴 호출
 		
 	}
 	

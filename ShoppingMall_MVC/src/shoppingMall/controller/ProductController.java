@@ -22,7 +22,7 @@ public class ProductController {
 	}
 
 	// method
-	public void requestAddProduct(){
+	public void requestAddProduct(){ // 상품등록 요청
 		
 		ProductView productView = new ProductView();
 		Product newProduct = productView.addProductView();
@@ -31,7 +31,7 @@ public class ProductController {
 	} // End of requestAddProduct()
 
 
-	public void requestDisplayProductList(){
+	public void requestDisplayProductList(){ // 등록된 상품전체보이기 요청
 
 		ProductView productView = new ProductView();
 		ArrayList<Product> products = productDAO.selectAllProduct();
@@ -40,7 +40,7 @@ public class ProductController {
 	} // End of requestDisplayProductList()
 
 
-	public void requestUpdateProduct(){
+	public void requestUpdateProduct(){ // 상품수정하기 요청
 		
 		ProductView productView = new ProductView();
 		SelectView selectedProduct = new SelectView();
@@ -51,7 +51,7 @@ public class ProductController {
 	} // End of requestUpdateProductInfo()
 
 
-	public void requestDeleteProduct(){
+	public void requestDeleteProduct(){ // 상품 삭제하기 요청
 		
 		ProductView productView = new ProductView();
 		SelectView selectedProduct = new SelectView();

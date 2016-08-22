@@ -20,7 +20,7 @@ public class UserController{
 	}
 
 	// method
-	public void requestAddUser(){
+	public void requestAddUser(){ // 유저 등록하기 요청
 		
 		UserView userView = new UserView(mainController);
 		User newUser = userView.addUserView();
@@ -41,7 +41,7 @@ public class UserController{
 	} // End of requestAddUser()
 
 	
-	public void requestUpdateUserInfo(){
+	public void requestUpdateUserInfo(){ // 유저정보 수정하기 요청
 		
 		UserView userView = new UserView(mainController);
 		User checkedUser = userView.checkLogInUserView();
@@ -52,7 +52,7 @@ public class UserController{
 	} // End of requestUpdateUserInfo()
 
 	
-	public void requestReadUserInfo(){
+	public void requestReadUserInfo(){ // 유저정보 읽기 요청
 		
 		UserView userView = new UserView(mainController);
 		User loginUser = userDAO.readUserInfo();
@@ -61,7 +61,7 @@ public class UserController{
 	} // End of requestReadUserInfo()
 
 	
-	public void requestWithdrawMember(){
+	public void requestWithdrawMember(){ // 회원탈퇴 요청
 
 		UserView userView = new UserView(mainController);
 		User loginUser = userDAO.readUserInfo();
@@ -75,7 +75,7 @@ public class UserController{
 	} // End of requestWithDrawMember()
 
 	
-	public void requestLogIn(){
+	public void requestLogIn(){ // 로그인 요청
 		
 		UserView userView = new UserView(mainController);
 		User logInUser = userView.logInView();
@@ -100,7 +100,7 @@ public class UserController{
 	} // End of requestLogIn()
 
 	
-	public void requestLogOut(){
+	public void requestLogOut(){ // 로그아웃 요청
 		
 		UserView userView = new UserView(mainController);
 		User loginUser = userDAO.readUserInfo();

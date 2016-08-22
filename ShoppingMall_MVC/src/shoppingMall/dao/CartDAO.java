@@ -21,7 +21,7 @@ public class CartDAO {
 	}
 
 	// method
-	public boolean purchase(int selectedProductNum){
+	public boolean purchase(int selectedProductNum){ // 유저 제품 구매 후 장바구니에 담는 메서드
 
 		boolean success = false;
 		boolean isFind = false;
@@ -59,7 +59,7 @@ public class CartDAO {
 	} // End of purchase()
 
 
-	public ArrayList<Product> selectCartListAll(){
+	public ArrayList<Product> selectCartListAll(){ // 장바구니 안 목록 전체 선택
 
 		ArrayList<Product> carts = cartRepository.getCarts();
 
@@ -67,7 +67,8 @@ public class CartDAO {
 
 	} // End of displayCartList()
 
-	public Product selectOneProductInCart(int selectedCartList){
+	
+	public Product selectOneProductInCart(int selectedCartList){ // 장바구니 목족 중 유저가 선택한 상품 선택
 
 		Product selectedProductInCart = null;
 
@@ -82,9 +83,10 @@ public class CartDAO {
 
 		return selectedProductInCart;
 
-	}
+	} // End of selectOneProductInCart
 
-	public void updateCartList(Product selectedProductInCart, int countProductInCart){
+	
+	public void updateCartList(Product selectedProductInCart, int countProductInCart){ // 카트 리스트 수정
 
 		if(countProductInCart == 0){
 			
@@ -107,6 +109,7 @@ public class CartDAO {
 
 	} // End of updateCartList()
 
+	
 	public void resetCart(){
 
 

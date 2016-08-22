@@ -22,7 +22,7 @@ public class CartController{
 	}
 	
 	// method
-	public void requestPurchase(){
+	public void requestPurchase(){ // 구매하기 요청
 		
 		mainController.productController.requestDisplayProductList();
 		SelectView selectedProduct = new SelectView();
@@ -34,7 +34,7 @@ public class CartController{
 	} // End of requestPurchase()
 	
 	
-	public void requestDisplayCartList(){
+	public void requestDisplayCartList(){ // 장바구니 전체목록 보이기 요청
 		
 		ArrayList<Product> carts = cartDAO.selectCartListAll();
 		CartView cartView = new CartView(mainController);
@@ -43,7 +43,7 @@ public class CartController{
 	} // End of requestDisplayCartList()
 	
 	
-	public void requestUpdateCartList(){
+	public void requestUpdateCartList(){ // 장바구니 수정 요청
 		
 		CartView cartView = new CartView(mainController);
 		int selectedCartList = cartView.selectedCartList();
