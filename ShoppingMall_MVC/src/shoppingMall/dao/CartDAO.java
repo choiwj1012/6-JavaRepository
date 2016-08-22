@@ -45,8 +45,9 @@ public class CartDAO {
 
 		for(int i=0; i<productRepository.getProduct().size(); i++){
 			if(selectedProductNum == productRepository.getProduct().get(i).getNumber()){
-
+				
 				selectedProduct = productRepository.getProduct().get(i);
+				selectedProduct.setCountProductInCart(selectedProduct.getCountProductInCart() + 1);
 				success = cartRepository.getCarts().add(selectedProduct);
 				break;
 

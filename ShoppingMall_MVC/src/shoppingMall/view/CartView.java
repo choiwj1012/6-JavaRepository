@@ -23,6 +23,8 @@ public class CartView {
 	// method
 	public void displayCartListView(ArrayList<Product> carts){
 
+		int sum = 0;
+		
 		System.out.println("장바구니 리스트 입니다");
 		System.out.println("상품번호\t상품명\t상품가격\t상품정보\t상품갯수");
 		
@@ -34,7 +36,11 @@ public class CartView {
 			System.out.print(carts.get(i).getInformation() + "\t");
 			System.out.println(carts.get(i).getCountProductInCart());
 			
+			sum = sum + (carts.get(i).getPrice() * carts.get(i).getCountProductInCart());
+			
 		}
+		
+		System.out.println("현재 장바구니에 담긴 금액은 : " + sum + "원 입니다");
 		
 		System.out.println("메인으로 돌아가시려면 [b]를, 수정하시려면 [m]을, 결제하시려면 [p]를 눌러주세요");
 		char mainOrPayment = keyboard.next().charAt(0);
@@ -50,6 +56,10 @@ public class CartView {
 		} else if(mainOrPayment == 'p'){
 			
 			this.actionPaymentView();
+			
+		} else {
+			
+			System.out.println("잘못 눌르셨습니다");
 			
 		} 
 		
