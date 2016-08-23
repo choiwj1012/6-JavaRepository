@@ -1,5 +1,3 @@
-
-
 import shoppingMall.main.controller.MainController;
 
 public class Main {

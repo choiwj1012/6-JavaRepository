@@ -1,7 +1,7 @@
 package shoppingMall.main.controller;
 
 import shoppingMall.cart.controller.CartController;
-import shoppingMall.login.controller.LogInOutController;
+import shoppingMall.loginout.controller.LogInOutController;
 import shoppingMall.menu.controller.MenuController;
 import shoppingMall.product.controller.ProductController;
 import shoppingMall.user.controller.UserController;
