@@ -1,0 +1,11 @@
+package userDao;
+
+public class UserDao {
+	
+	// constructor
+	public UserDao() {
+
+	}
+	
+	
+}

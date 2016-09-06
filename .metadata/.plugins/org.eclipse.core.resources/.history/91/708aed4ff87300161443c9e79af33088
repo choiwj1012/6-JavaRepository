@@ -1,0 +1,17 @@
+package loginVo;
+
+public class Login {
+
+	private String userId;
+	private String userPassword;	
+	
+	public Login(String userId, String userPassword) {
+	
+		this.userId = userId;
+		this.userPassword = userPassword;
+		
+	}
+	
+	
+
+}

@@ -1,0 +1,17 @@
+package loginDao;
+
+import loginVo.Login;
+
+public class LoginDao {
+
+	public boolean login(Login newLogin) {
+
+		boolean success = false;
+		
+		
+		return success;
+	}
+
+	
+	
+}

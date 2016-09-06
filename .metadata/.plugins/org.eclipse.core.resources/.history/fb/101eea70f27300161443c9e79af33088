@@ -1,0 +1,24 @@
+package userDao;
+
+import userVo.User;
+
+public class UserDao {
+	
+	// constructor
+	public UserDao() {
+
+	}
+
+	public boolean register(User newUser) {
+		
+		boolean success = false; 
+		
+		
+		
+		
+		return success;
+		
+	}
+	
+	
+}

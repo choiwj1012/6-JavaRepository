@@ -1,0 +1,53 @@
+package userDao;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import MainController.Controller;
+import userVo.User;
+
+public class UserDao {
+	
+	// constructor
+	public UserDao() {
+
+	}
+
+	public boolean register(User newUser) {
+		
+		boolean success = false; 
+		
+		int nextUserNumber = 0;
+		Statement stmt = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try{
+			
+			String sql = "select max(userNumber) + 1 as maxUserNumber from userInfo";
+			stmt = Controller.getProgramController().getConn().createStatement();
+			
+			
+			
+		} catch(SQLException e){
+			System.out.println("회원 등록 시에 예외가 발생했습니다.");
+			e.printStackTrace();
+		} finally {
+			
+			if(pstmt != null){
+				
+			}
+			
+			if()
+		}
+		
+		return success;
+		
+	}
+	
+	
+}
+
+

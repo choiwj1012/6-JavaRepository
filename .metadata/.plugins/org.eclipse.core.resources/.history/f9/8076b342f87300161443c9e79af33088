@@ -1,0 +1,5 @@
+package loginVo;
+
+public class Login {
+
+}

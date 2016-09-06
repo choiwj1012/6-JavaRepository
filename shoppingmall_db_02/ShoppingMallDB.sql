@@ -1,3 +1,6 @@
+drop table product;
+drop table userInfo;
+
 CREATE TABLE product
 (
 	productNumber int,
@@ -7,6 +10,10 @@ CREATE TABLE product
 	productVendorName varchar2(50)
 );
 
-select * from product;
-
-select max(productNumber) + 1 from product;
+CREATE TABLE userInfo
+(
+	userNumber int,
+	userId varchar2(50),
+	userPassword varchar2(50),
+	userName varchar2(50)
+);

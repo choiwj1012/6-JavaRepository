@@ -1,0 +1,10 @@
+package loginRepository;
+
+import loginVo.Login;
+
+public class LoginRepository {
+
+	
+	private Login login;
+	
+}

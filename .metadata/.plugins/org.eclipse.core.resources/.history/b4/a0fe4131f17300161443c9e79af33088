@@ -1,0 +1,23 @@
+package userController;
+
+import userDao.UserDao;
+
+public class UserController {
+
+	private UserDao userDao;
+	
+	public UserController() {
+	
+		userDao = new UserDao();
+		
+	}
+	
+	// 회원 등록(가입) 요청을 처리하는 메서드
+	public void requestRegist(){
+		
+		
+		
+	}
+	
+	
+}

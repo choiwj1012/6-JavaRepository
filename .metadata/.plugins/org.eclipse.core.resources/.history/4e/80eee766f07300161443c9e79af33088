@@ -1,0 +1,5 @@
+package userVo;
+
+public class User {
+
+}

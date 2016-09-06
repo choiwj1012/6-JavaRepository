@@ -1,0 +1,29 @@
+package loginController;
+
+import loginDao.LoginDao;
+
+public class LoginController {
+
+	private LoginDao loginDao;
+	
+	public LoginController(){
+		
+		this.loginDao = new LoginDao();
+		
+	}
+	
+	// 로그인 요청을 처리하는 메서드
+	public void requestLogin(){
+		
+		// 아이디와 패스워드를 입력하는 화면에서 로그인 정보(Login)획득
+		
+		
+		// 획득한 로그인 정보를 통해 회원 테이블에서 로그인 정보에 해당하는 회원이 있는지 체크
+		
+		
+		// 제품 컨트롤러의 제품 목록 보기를 요청함
+		
+		
+	}
+	
+}

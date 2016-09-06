@@ -33,7 +33,7 @@ public class ProductSelectList {
 				System.out.print(productList.get(i).getProductNumber() + "\t");
 				System.out.print(productList.get(i).getProductName() + "\t");
 				System.out.print(productList.get(i).getProductPrice() + "\t");
-				System.out.print(productList.get(i).getProductVendorName() + "\t");
+				System.out.println(productList.get(i).getProductVendorName());
 
 			}
 
@@ -47,8 +47,19 @@ public class ProductSelectList {
 
 
 		while(true){
-
-			System.out.println("[1. 제품 등록 2. 제품 조회 0. 프로그램 종료]");
+						
+			boolean success = Controller.getLoginController().requestCheckLogin();		
+			
+			if(!success){ // 로그인 되지 않은 상태
+			
+				System.out.println("[1. 제품 등록 2. 제품 조회 3. 회원 가입, 4. 로그인, 0. 프로그램 종료]");	
+					
+			} else {
+				
+				System.out.println("[1. 제품 등록 2. 제품 조회 3. 회원 가입, 4. 로그아웃, 0. 프로그램 종료]");
+				
+			}
+			
 			int selectedMenu = keyboard.nextInt();
 
 			switch(selectedMenu){
@@ -61,6 +72,21 @@ public class ProductSelectList {
 			case 2 :
 				System.out.println("제품 조회");
 				Controller.getProductController().requestSelectOne();
+				break;
+				
+			case 3 :
+				System.out.println("회원 등록");
+				Controller.getUserController().requestRegister();
+				break;
+				
+			case 4 :
+				if(!success){
+					System.out.println("로그인");
+					Controller.getLoginController().requestLogin();	
+				} else {
+					Controller.getLoginController().requestLogout();
+				}
+				
 				break;
 
 			case 0 :

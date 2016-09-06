@@ -42,7 +42,7 @@ public class ProductDao {
 				product.setProductName(rs.getString("productName"));
 				product.setProductComment(rs.getString("productComment"));
 				product.setProductPrice(rs.getInt("productPrice"));
-				product.setProductVendorName(rs.getString("productManufacturer"));
+				product.setProductVendorName(rs.getString("productVendorName"));
 				productList.add(product);
 			}
 
@@ -59,7 +59,7 @@ public class ProductDao {
 					e.printStackTrace();
 				}			
 			}
-			if(rs != null)
+			if(stmt != null)
 			{
 				try {
 					stmt.close();
@@ -86,12 +86,12 @@ public class ProductDao {
 		try{
 			
 			//현재 제품 테이블에 있는 마지막 제품의 제품 번호를 읽어와서 +1을 한 nextProductNumber를 설정
-			String sql = "select max(productNumber) as MaxProductNumber + 1 from product";
+			String sql = "select max(productNumber)+1 as \"MaxProductNumber\" from product";
 			stmt = Controller.getProgramController().getConn().createStatement();
 			rs = stmt.executeQuery(sql);
 			
 			if(rs.next()){
-				nextProductNumber = rs.getInt("maxProductNumber");
+				nextProductNumber = rs.getInt("MaxProductNumber");
 				if(rs.wasNull()){ // 최초로 제품을 등록할 떄
 					nextProductNumber = 1;
 				}
@@ -172,7 +172,7 @@ public class ProductDao {
 				searchedProduct.setProductName(rs.getString("productName"));
 				searchedProduct.setProductComment(rs.getString("productComment"));
 				searchedProduct.setProductPrice(rs.getInt("productPrice"));
-				searchedProduct.setProductVendorName(rs.getString("productVendor"));
+				searchedProduct.setProductVendorName(rs.getString("productVendorName"));
 				
 			}
 			
