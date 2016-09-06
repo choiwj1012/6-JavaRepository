@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.10" icons="true">  
+  <object id="1" language="java" name="shoppingMall.Login.Controller.LoginController" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/Login/Controller/LoginController.java" binary="false" label="loginController" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="106" y="0"/>    
+    <execution id="2">      
+      <position height="105" width="128" x="5" y="99"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="399" width="128" x="5" y="231"/>    
+    </execution>    
+    <execution id="8">      
+      <position height="63" width="128" x="5" y="322"/>    
+    </execution>    
+    <execution id="11">      
+      <position height="63" width="128" x="5" y="420"/>    
+    </execution>    
+    <execution id="14">      
+      <position height="63" width="128" x="5" y="511"/>    
+    </execution>  
+  </object>  
+  <object id="17" language="java" name="shoppingMall.Login.Dao.LoginDao" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/Login/Dao/LoginDao.java" binary="false" label="loginDao" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="229" y="0"/>    
+    <execution id="4">      
+      <position height="63" width="105" x="137" y="120"/>    
+    </execution>    
+    <execution id="10">      
+      <position height="21" width="105" x="137" y="343"/>    
+    </execution>    
+    <execution id="13">      
+      <position height="21" width="105" x="137" y="441"/>    
+    </execution>    
+    <execution id="16">      
+      <position height="21" width="105" x="137" y="532"/>    
+    </execution>  
+  </object>  
+  <object id="20" language="java" name="shoppingMall.Login.Repository.LoginRepository" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/Login/Repository/LoginRepository.java" binary="false" type="class" 
+    autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="19">      
+      <position height="21" width="0" x="0" y="141"/>    
+    </execution>  
+  </object>  
+  <object id="21" language="java" name="shoppingMall.Login.View.LoginView" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/Login/View/LoginView.java" binary="false" label="loginView" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="439" y="0"/>    
+    <execution id="7">      
+      <position height="357" width="107" x="522" y="252"/>    
+    </execution>  
+  </object>  
+  <object id="28" language="java" name="shoppingMall.mainController.MainController" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/mainController/MainController.java" binary="false" label="&lt;static&gt;" 
+    type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="25">      
+      <position height="21" width="0" x="0" y="525"/>    
+    </execution>  
+  </object>  
+  <object id="29" language="java" name="shoppingMall.Login.Controller.LoginController" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/Login/Controller/LoginController.java" binary="false" type="class" 
+    autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="27">      
+      <position height="21" width="0" x="0" y="567"/>    
+    </execution>  
+  </object>  
+  <object id="30" language="java" name="shoppingMall.Login.Vo.Login" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/Login/Vo/Login.java" binary="false" label="login" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="672" y="0"/>    
+    <execution id="23">      
+      <position height="21" width="0" x="0" y="483"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="LoginDao()" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="loginView():void" asynchronous="false">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="9" operation="login(shoppingMall.Login.Vo.Login):int" asynchronous="false">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="10"/>  
+  </message>  
+  <message id="12" operation="logOut():boolean" asynchronous="false">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="13"/>  
+  </message>  
+  <message id="15" operation="checkLogin():boolean" asynchronous="false">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="16"/>  
+  </message>  
+  <message id="18" operation="LoginRepository()" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="19"/>  
+  </message>  
+  <message id="22" operation="Login(java.lang.String,java.lang.String)" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="23"/>  
+  </message>  
+  <message id="24" operation="getLoginController():shoppingMall.Login.Controller.LoginController" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="25"/>  
+  </message>  
+  <message id="26" operation="requestLoginData(shoppingMall.Login.Vo.Login):void" asynchronous="false">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="27"/>  
+  </message>
+</sequence-diagram>

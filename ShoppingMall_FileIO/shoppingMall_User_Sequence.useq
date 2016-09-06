@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.10" icons="true">  
+  <object id="1" language="java" name="shoppingMall.User.Controller.UserController" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/User/Controller/UserController.java" binary="false" label="userController" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="66" y="0"/>    
+    <execution id="2">      
+      <position height="357" width="126" x="5" y="99"/>    
+    </execution>    
+    <execution id="5">      
+      <position height="63" width="126" x="5" y="501"/>    
+    </execution>    
+    <execution id="8">      
+      <position height="63" width="126" x="5" y="605"/>    
+    </execution>    
+    <execution id="11">      
+      <position height="63" width="126" x="5" y="697"/>    
+    </execution>    
+    <execution id="14">      
+      <position height="63" width="126" x="5" y="792"/>    
+    </execution>    
+    <execution id="17">      
+      <position height="105" width="126" x="5" y="865"/>    
+    </execution>    
+    <execution id="20">      
+      <position height="63" width="126" x="5" y="912"/>    
+    </execution>    
+    <execution id="23">      
+      <position height="63" width="126" x="5" y="464"/>    
+    </execution>    
+    <execution id="26">      
+      <position height="63" width="126" x="5" y="462"/>    
+    </execution>    
+    <execution id="29">      
+      <position height="63" width="126" x="5" y="460"/>    
+    </execution>  
+  </object>  
+  <object id="32" language="java" name="shoppingMall.User.Dao.UserDao" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/User/Dao/UserDao.java" binary="false" label="userDao" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="368" y="0"/>    
+    <execution id="4">      
+      <position height="315" width="103" x="135" y="120"/>    
+    </execution>    
+    <execution id="10">      
+      <position height="21" width="103" x="135" y="626"/>    
+    </execution>    
+    <execution id="13">      
+      <position height="21" width="103" x="135" y="718"/>    
+    </execution>    
+    <execution id="16">      
+      <position height="21" width="103" x="135" y="813"/>    
+    </execution>    
+    <execution id="22">      
+      <position height="21" width="103" x="135" y="933"/>    
+    </execution>  
+  </object>  
+  <object id="35" language="java" name="shoppingMall.User.Repository.UserRepository" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/User/Repository/UserRepository.java" binary="false" type="class" 
+    autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="34">      
+      <position height="273" width="0" x="0" y="141"/>    
+    </execution>  
+  </object>  
+  <object id="48" language="java" name="java.util.ArrayList" project="ShoppingMall" 
+    file="C:/Program Files/Java/jre1.8.0_101/lib/rt.jar" binary="true" label="users" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="37">      
+      <position height="21" width="0" x="0" y="162"/>    
+    </execution>    
+    <execution id="41">      
+      <position height="21" width="0" x="0" y="246"/>    
+    </execution>    
+    <execution id="47">      
+      <position height="21" width="0" x="0" y="372"/>    
+    </execution>  
+  </object>  
+  <object id="49" language="java" name="shoppingMall.User.Vo.User" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/User/Vo/User.java" binary="false" label="admin" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="39">      
+      <position height="21" width="0" x="0" y="204"/>    
+    </execution>  
+  </object>  
+  <object id="50" language="java" name="shoppingMall.User.Vo.User" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/User/Vo/User.java" binary="false" label="testUser" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="43">      
+      <position height="21" width="0" x="0" y="288"/>    
+    </execution>    
+    <execution id="45">      
+      <position height="21" width="0" x="0" y="330"/>    
+    </execution>  
+  </object>  
+  <object id="51" language="java" name="shoppingMall.User.Repository.UserRepository" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/User/Repository/UserRepository.java" binary="false" label="userRepository" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="542" y="0"/>  
+  </object>  
+  <object id="52" language="java" name="shoppingMall.User.View.UserUpdateView" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/User/View/UserUpdateView.java" binary="false" label="userUpdateView" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="553" y="0"/>  
+  </object>  
+  <object id="53" language="java" name="shoppingMall.User.View.UserSignView" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/User/View/UserSignView.java" binary="false" label="userSignView" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="553" y="0"/>  
+  </object>  
+  <object id="54" language="java" name="shoppingMall.User.View.UserSearchView" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/User/View/UserSearchView.java" binary="false" label="userSearchView" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="553" y="0"/>    
+    <execution id="19">      
+      <position height="63" width="119" x="1047" y="886"/>    
+    </execution>  
+  </object>  
+  <object id="57" language="java" name="java.util.Scanner" project="ShoppingMall" 
+    file="C:/Program Files/Java/jre1.8.0_101/lib/rt.jar" binary="true" label="keyboard" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="56">      
+      <position height="21" width="0" x="0" y="907"/>    
+    </execution>  
+  </object>  
+  <object id="58" language="java" name="shoppingMall.User.View.UserMenuView" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/User/View/UserMenuView.java" binary="false" label="userMenuView" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="553" y="0"/>    
+    <execution id="7">      
+      <position height="21" width="109" x="1170" y="522"/>    
+    </execution>  
+  </object>  
+  <object id="59" language="java" name="shoppingMall.User.View.UserManagementMenuView" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/User/View/UserManagementMenuView.java" binary="false" 
+    label="userManagementMenuView" type="class" autoSize="true">    
+    <position height="-1" width="-1" x="553" y="0"/>  
+  </object>  
+  <object id="60" language="java" name="shoppingMall.User.View.UserListView" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/User/View/UserListView.java" binary="false" label="userListView" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="553" y="0"/>    
+    <execution id="25">      
+      <position height="21" width="105" x="1545" y="485"/>    
+    </execution>  
+  </object>  
+  <object id="61" language="java" name="shoppingMall.User.View.DeleteUserView" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/User/View/DeleteUserView.java" binary="false" label="deleteUserView" 
+    type="class" autoSize="true">    
+    <position height="-1" width="-1" x="553" y="0"/>    
+    <execution id="28">      
+      <position height="21" width="114" x="1654" y="483"/>    
+    </execution>  
+  </object>  
+  <object id="62" language="java" name="shoppingMall.User.View.AdminView" project="ShoppingMall" 
+    file="/ShoppingMall/src/shoppingMall/User/View/AdminView.java" binary="false" label="adminView" type="class" 
+    autoSize="true">    
+    <position height="-1" width="-1" x="553" y="0"/>    
+    <execution id="31">      
+      <position height="21" width="105" x="1772" y="481"/>    
+    </execution>  
+  </object>  
+  <message id="3" operation="UserDao()" asynchronous="false">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="userMenuView():void" asynchronous="false">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="9" operation="userSignUp(shoppingMall.User.Vo.User):boolean" asynchronous="false">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="10"/>  
+  </message>  
+  <message id="12" operation="checkUserId(shoppingMall.User.Vo.User):boolean" asynchronous="false">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="13"/>  
+  </message>  
+  <message id="15" operation="userList():java.util.ArrayList&lt;User&gt;" asynchronous="false">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="16"/>  
+  </message>  
+  <message id="18" operation="UserSearchView()" asynchronous="false">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="19"/>  
+  </message>  
+  <message id="21" operation="searchUser(int):shoppingMall.User.Vo.User" asynchronous="false">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="22"/>  
+  </message>  
+  <message id="24" asynchronous="false">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="25"/>  
+  </message>  
+  <message id="27" operation="deleteUserView():void" asynchronous="false">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="28"/>  
+  </message>  
+  <message id="30" asynchronous="false">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="31"/>  
+  </message>  
+  <message id="33" operation="UserRepository()" asynchronous="false">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="34"/>  
+  </message>  
+  <message id="36" operation="ArrayList()" asynchronous="false">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="37"/>  
+  </message>  
+  <message id="38" 
+    operation="User(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,java.lang.String)" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="39"/>  
+  </message>  
+  <message id="40" operation="add(int,E):void" asynchronous="false">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="41"/>  
+  </message>  
+  <message id="42" 
+    operation="User(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,int,java.lang.String)" 
+    asynchronous="false">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="43"/>  
+  </message>  
+  <message id="44" operation="setUserNumber(int):void" asynchronous="false">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="45"/>  
+  </message>  
+  <message id="46" operation="add(int,E):void" asynchronous="false">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="47"/>  
+  </message>  
+  <message id="55" operation="Scanner(java.io.InputStream)" asynchronous="false">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="56"/>  
+  </message>
+</sequence-diagram>
