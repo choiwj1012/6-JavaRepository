@@ -14,10 +14,10 @@ public class Controller {
 	
 	public Controller(){
 		
-		programController = new ProgramController();
-		productController = new ProductController();
-		userController = new UserController();
-		loginController = new LoginController();
+		this.programController = new ProgramController();
+		this.productController = new ProductController();
+		this.userController = new UserController();
+		this.loginController = new LoginController();
 		
 	}
 
