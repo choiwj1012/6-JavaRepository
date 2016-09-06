@@ -1,0 +1,29 @@
+package productController;
+
+import java.util.Scanner;
+
+import productVo.Product;
+
+public class ProductRegisterView {
+
+	private Scanner keyboard;
+	
+	public ProductRegisterView(){
+		
+		this.keyboard = new Scanner(System.in);
+		
+	}
+	
+	public Product regist(){
+		
+		Product product = null;
+		
+		
+		
+		s
+		return product;
+		
+	}
+	
+
+}

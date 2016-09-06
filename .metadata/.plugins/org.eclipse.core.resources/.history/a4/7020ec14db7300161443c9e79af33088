@@ -1,0 +1,17 @@
+package productView;
+
+import java.util.ArrayList;
+
+import productVo.Product;
+
+public class ProductSelectList {
+
+	public void printProductSelectList(ArrayList<Product> productList){
+
+		System.out.println("제품목록보기");
+
+
+
+	}
+
+}

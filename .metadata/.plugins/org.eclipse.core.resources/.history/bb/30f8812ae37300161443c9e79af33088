@@ -1,0 +1,15 @@
+package productView;
+
+import java.util.Scanner;
+
+public class ProductSelectOneView {
+
+	private Scanner keyboard;
+	
+	public ProductSelectOneView(){
+		
+		keyboard = new Scanner(System.in);
+		
+	}
+	
+}

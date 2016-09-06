@@ -1,0 +1,33 @@
+package dao;
+
+import java.util.ArrayList;
+
+import domain.Product;
+
+public class ProductDao {
+
+	
+	// variable
+	
+	
+	
+	// constructor
+	public ProductDao() {
+	
+		
+	}
+	
+	
+	// 제품 목록 보기를 위한 dao
+	public ArrayList<Product> selectList(){
+		
+		ArrayList<product> products = null;
+		
+		
+		return products;
+		
+	}
+	
+	
+	
+}

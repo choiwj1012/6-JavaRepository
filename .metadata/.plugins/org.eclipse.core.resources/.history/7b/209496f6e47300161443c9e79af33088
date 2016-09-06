@@ -1,0 +1,42 @@
+package productView;
+
+import java.util.Scanner;
+
+import productVo.Product;
+
+public class ProductSelectOneView {
+
+	private Scanner keyboard;
+	
+	public ProductSelectOneView(){
+		
+		keyboard = new Scanner(System.in);
+		
+	}
+	
+	
+	// 제품번호 획득
+	public int getSearchProductNumber(){
+		
+		int searchProductNumber = 0;
+		
+		System.out.println("제품 조회 모드입니다.");
+		System.out.println("제품번호를 입력하세요");
+		searchProductNumber = keyboard.nextInt();
+		
+		return searchProductNumber;
+		
+	}
+
+
+	public void printSearchedProduct(Product searchedProduct) {
+	
+		System.out.println("제품 번호 : " + searchedProduct.getProductNumber());
+		System.out.println("제품 이름 : " + searchedProduct.getProductName());
+		System.out.println("제품 설명 : " + searchedProduct.getProductComment());
+		System.out.println("제품 가격 : " + searchedProduct.getProductPrice());
+		System.out.println("제품 제조사 : " + searchedProduct.getProductVendorName());
+		
+	}
+	
+}

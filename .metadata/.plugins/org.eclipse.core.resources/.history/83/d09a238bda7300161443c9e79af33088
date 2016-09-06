@@ -1,0 +1,15 @@
+package Productcontroller;
+
+public class Controller {
+
+	
+	private MainController mainController;
+	
+	public Controller(MainController mainController){
+		
+		this.mainController = mainController;
+		
+	}
+	
+	
+}

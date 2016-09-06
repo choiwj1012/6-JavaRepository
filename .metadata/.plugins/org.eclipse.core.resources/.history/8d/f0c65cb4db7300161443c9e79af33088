@@ -1,0 +1,25 @@
+package productView;
+
+import java.util.ArrayList;
+
+import productVo.Product;
+
+public class ProductSelectList {
+
+	public void printProductSelectList(ArrayList<Product> productList){
+
+		System.out.println("제품목록보기");
+
+		System.out.println("제품번호\t제품명\t가격\t제조사");
+		for(int i=0; i<productList.size(); i++){
+			
+			System.out.print(productList.get(i).getProductNumber() + "\t");
+			System.out.print(productList.get(i).getProductName() + "\t");
+			System.out.print(productList.get(i).getProductPrice() + "\t");
+			System.out.print(productList.get(i).getProductVendorName() + "\t");
+			
+		}
+
+	}
+
+}

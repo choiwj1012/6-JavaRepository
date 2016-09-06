@@ -1,0 +1,75 @@
+package productDao;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import MainController.Controller;
+import productVo.Product;
+
+public class ProductDao {
+
+
+	// variable
+
+
+
+	// constructor
+	public ProductDao() {
+
+
+	}
+
+
+	// 제품 목록 보기를 위한 dao 메서드
+	public ArrayList<Product> selectList() {
+
+		Statement stmt = null;
+		ResultSet rs = null;
+		ArrayList<Product> productList = new ArrayList<Product>();
+
+		try {
+			stmt = Controller.getProgramController().getConn().createStatement();
+			String sql = "select * from product";
+			rs = stmt.executeQuery(sql);
+
+			while(rs.next())
+			{
+				Product product = new Product();
+				product.setProductNumber(rs.getInt("productNumber"));
+				product.setProductName(rs.getString("productName"));
+				product.setProductComment(rs.getString("productComment"));
+				product.setProductPrice(rs.getInt("productPrice"));
+				product.setProductVendorName(rs.getString("productManufacturer"));
+				productList.add(product);
+			}
+
+		} catch (SQLException e) {
+			System.out.println("제품 목록보기에서 예외 발생");
+			e.printStackTrace();
+
+		} finally {
+			if(rs != null)
+			{
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}			
+			}
+			if(rs != null)
+			{
+				try {
+					stmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+
+		return productList;
+	}
+
+}

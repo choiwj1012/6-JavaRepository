@@ -1,0 +1,17 @@
+package productController;
+
+import MainController.MainController;
+
+public class Controller {
+
+	
+	private MainController mainController;
+	
+	public Controller(MainController mainController){
+		
+		this.mainController = mainController;
+		
+	}
+	
+	
+}

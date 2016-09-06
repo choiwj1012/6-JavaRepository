@@ -1,0 +1,32 @@
+package productController;
+
+import java.util.ArrayList;
+
+import dao.ProductDao;
+import domain.Product;
+
+public class ProductController {
+
+	// variable
+	private ProductDao productDao;
+	
+	// constructor
+	public ProductController(){
+		
+		productDao = new ProductDao();
+		
+	}
+	
+	
+	// 제품 목록 보기 요청을 처리하는 메서드
+	public void requestSelectList(){
+		
+		// 제품목록을 가져오기 (product 테이블)
+		ArrayList<Product> productList = productDao.selectList();
+		
+		// 제품목록 표시
+		
+		
+	}
+	
+}

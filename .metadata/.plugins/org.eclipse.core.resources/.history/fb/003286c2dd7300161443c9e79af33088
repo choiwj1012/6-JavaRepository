@@ -1,0 +1,30 @@
+package MainController;
+
+import productController.ProductController;
+
+public class Controller {
+
+	
+	private static ProgramController mainController;
+	private static ProductController productController;
+	
+	
+	public Controller(){
+		
+		this.mainController = new ProgramController();
+		this.productController = new ProductController();
+		
+	}
+
+
+	public static ProgramController getMainController() {
+		return mainController;
+	}
+
+
+	public static ProductController getProductController() {
+		return productController;
+	}
+	
+	
+}

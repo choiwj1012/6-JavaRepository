@@ -1,0 +1,11 @@
+package controller;
+
+import dao.ProductDao;
+
+public class ProductController {
+
+	private ProductDao productDao;
+	
+	
+	
+}

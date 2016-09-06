@@ -1,0 +1,66 @@
+package domain;
+
+public class Product {
+
+	
+	// variable
+	private int productNumber;
+	private String productName;
+	private String productConmment;
+	private int productPrice;
+	private String productVendorName;
+	
+	
+	// constructor
+	public Product(){
+		
+	}
+	
+	public Product(productName, productConmment){
+		
+		
+	}
+
+	
+	// getter and setter
+	public int getProductNumber() {
+		return productNumber;
+	}
+
+	public void setProductNumber(int productNumber) {
+		productNumber = productNumber;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public String getProductConmment() {
+		return productConmment;
+	}
+
+	public void setProductConmment(String productConmment) {
+		this.productConmment = productConmment;
+	}
+
+	public int getProductPrice() {
+		return productPrice;
+	}
+
+	public void setProductPrice(int productPrice) {
+		this.productPrice = productPrice;
+	}
+
+	public String getProductVendorName() {
+		return productVendorName;
+	}
+
+	public void setProductVendorName(String productVendorName) {
+		this.productVendorName = productVendorName;
+	}
+		
+}

@@ -1,0 +1,5 @@
+package productController;
+
+public class ProductRegisterView {
+
+}
